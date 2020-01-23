@@ -44,9 +44,9 @@ class Register extends CI_Controller {
 			'name' => $name, 
 			'email' => $email, 
 			'password' => $password, 
-			'number' => $number,
-			'dob' => $dob,
-			'date_time' => date('Y-m-d H:i:s')
+			'mobile_number' => $number,
+			'date_of_birth' => $dob,
+			'created_at' => date('Y-m-d H:i:s')
             ];
 			 $insert_data = $this->Register_model->add_user($data);
 			 
