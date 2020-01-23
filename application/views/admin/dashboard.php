@@ -6,10 +6,6 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-			<h6><?php if($this->session->flashdata('msg')): ?>
-				<p class="alert alert-success"><?php echo $this->session->flashdata('msg'); ?></p>
-				<?php endif; ?>
-			</h6>	
             <h1 class="m-0 text-dark">Dashboard v2</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
