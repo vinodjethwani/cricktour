@@ -12,14 +12,14 @@ class Tournaments extends MY_Controller {
 	{
 		$data = array();
 
-		$tournaments_records = $this->tournaments_model->tournaments_info()->get_all();
+		$tournaments_records = $this->tournaments_model->tournaments_info()->get_all('tournaments');
 
 		$data['tournaments_records'] = $tournaments_records;
 
 	    $data['main'] = 'tournaments/tournaments_list';
 	    $data['js_function'] = array('tournaments_list');
 
-		$this->load->view('template/template',$data);
+		$this->load->view('admin/template/template',$data);
 	}
 
 	function add_tournaments()
