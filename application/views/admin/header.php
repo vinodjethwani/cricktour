@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Cricktour | Admin</title>
+  <title>Crictour | Admin</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<?php echo base_url();?>/assets/admintheme/plugins/fontawesome-free/css/all.min.css">
@@ -40,9 +40,21 @@
   <link rel="stylesheet" href="<?php echo base_url();?>/assets/admintheme/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
+  <style>
+  .username{
+	  padding-left:16px;
+	  color:#D6D8D9;
+  }
+  .username:hover{
+	  color:white;
+  }
+  
+
+  </style>
+  
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-<script>alert("You are Login Successfully");</script>
 
 
 <div class="wrapper">
@@ -72,9 +84,7 @@
         </div>
       </div>
     </form>
-	<a href="<?php echo base_url('logout');?>">
-	<button type="button">Logout</button>
-	</a>
+	
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
@@ -178,28 +188,49 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?php echo base_url('admin/dashboard');?>" class="brand-link">
-      <img src="<?php echo base_url('');?>/assets/admintheme/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="<?php echo base_url();?>/assets/admintheme/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">CrickTour</span>
+      <span class="brand-text font-weight-light">CricTour</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="<?php echo base_url();?>/assets/admintheme/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Admin Name</a>
-        </div>
-      </div>
-
+    
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+			   
+			   <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3">
+	  <li class="nav-item has-treeview">
+	  <a href="#" class="nav-link ">
+          <img src="<?php echo base_url();?>/assets/admintheme/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+		  <p class="username"><?php echo $this->session->name;?>
+		       <i class="fas fa-angle-left right"></i>
+		  </p>
+       </a>
+		<ul class="nav nav-treeview">
+               <li class="nav-item">
+                <a href="<?php echo base_url('admin/Pages/Profile');?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Profile</p>
+                </a>
+              </li>
+			  
+			 
+              <li class="nav-item">
+                <a href="<?php echo base_url('logout');?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Logout</p>
+                </a>
+              </li>
+         </ul>
+		</li>
+      </div>
+			   
+			   
           <li class="nav-item has-treeview menu-open">
             <a href="<?php echo base_url('admin/dashboard');?>" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -435,7 +466,287 @@
   </aside>
 <?php 
 }
-else{
-	echo "test";
+else{?>
+<!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="<?php echo base_url('admin/dashboard');?>" class="brand-link">
+      <img src="<?php echo base_url();?>/assets/admintheme/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">CricTour</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+    
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+			   
+			   <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3">
+	  <li class="nav-item has-treeview">
+	  <a href="#" class="nav-link ">
+          <img src="<?php echo base_url();?>/assets/admintheme/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+		  <p class="username"><?php echo $this->session->name;?>
+		       <i class="fas fa-angle-left right"></i>
+		  </p>
+       </a>
+		<ul class="nav nav-treeview">
+               <li class="nav-item">
+                <a href="<?php echo base_url('admin/Pages/Profile');?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Profile</p>
+                </a>
+              </li>
+			  
+			 
+              <li class="nav-item">
+                <a href="<?php echo base_url('logout');?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Logout</p>
+                </a>
+              </li>
+         </ul>
+		</li>
+      </div>
+			   
+			   
+          <li class="nav-item has-treeview menu-open">
+            <a href="<?php echo base_url('admin/dashboard');?>" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+              </p>
+            </a>        
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url('admin/widget');?>" class="nav-link">
+              <i class="nav-icon fas fa-trophy"></i>
+              <p>
+                Add A Tournament
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Layout Options
+		       <i class="fas fa-angle-left right"></i>
+
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/layouts/Top-nav');?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Top Navigation</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/layouts/Top-nav-sidebar');?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Top Navigation 2</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Charts
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/Charts/ChartJs')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ChartJS</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/Charts/Flot')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Flot</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/Charts/Inline');?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inline</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+           
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Tables
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/Tables/DataTable');?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>DataTables</p>
+                </a>
+              </li>
+               
+            </ul>
+          </li>
+          <li class="nav-header">EXAMPLES</li>
+          <li class="nav-item">
+            <a href="<?php echo base_url('admin/Calendarr');?>" class="nav-link">
+              <i class="nav-icon fas fa-calendar-alt"></i>
+              <p>
+                Calendar
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url('admin/Gallery')?>" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Gallery
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Mailbox
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/Mailbox/Inbox')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inbox</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/Mailbox/Compose')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Compose</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/Mailbox/MailRead')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Read</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Pages
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+               
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/Pages/Profile');?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Profile</p>
+                </a>
+              </li>
+               
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/Pages/Projects');?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Projects</p>
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/Pages/Contacts');?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contacts</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                Extras
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/examples/login.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Login</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/examples/register.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Register</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/examples/forgot-password.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Forgot Password</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/examples/recover-password.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Recover Password</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/examples/lockscreen.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lockscreen</p>
+                </a>
+              </li>
+               
+              <li class="nav-item">
+                <a href="pages/examples/404.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Error 404</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/examples/500.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Error 500</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>        
+                  
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+<?php	
 }
 ?>

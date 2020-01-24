@@ -35,6 +35,7 @@ class Login extends CI_Controller
 		if ($check_login) {
             //if yes then set the session 'loggin_in' as true
             $this->session->set_userdata($sessiondata);
+			$this->session->set_flashdata('msg', 'You are Login Successfully!');
             redirect(base_url().'admin/dashboard');
         } else {
             //if no then set the session 'logged_in' as false
