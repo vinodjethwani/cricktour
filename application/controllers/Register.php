@@ -25,7 +25,7 @@ class Register extends CI_Controller {
         $this->form_validation->set_message('is_unique', 'Email already exists.');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[4]'); 
-		$this->form_validation->set_rules('number', 'Mobile Number ', 'required|regex_match[/^[0-9]{10}$/]');
+		$this->form_validation->set_rules('mobile_number', 'Mobile Number ', 'required|regex_match[/^[0-9]{10}$/]');
 		
 		  if ($this->form_validation->run() == FALSE) {
             //set the validation errors in flashdata (one time session)
@@ -37,8 +37,8 @@ class Register extends CI_Controller {
             $name = $this->input->post('name');
             $email = $this->input->post('email');
             $password = sha1($this->input->post('password'));
-			$number = $this->input->post('number');
-            $dob = $this->input->post('dob');
+			$number = $this->input->post('mobile_number');
+            $dob = $this->input->post('date_of_birth');
 
 			$data = [
 			'name' => $name, 

@@ -62,7 +62,7 @@ $route['logout']= 'login/logout';
 //Admin Dash Routes
 $route['admin/dashboard']='admin/DashboardController';
 
-$route['admin/widget']='admin/DashboardController/sidewidget';
+$route['admin/add_tournament']='admin/DashboardController/add_tournament';
 
 $route['admin/layouts/Top-nav']='admin/DashboardController/layouts';
 

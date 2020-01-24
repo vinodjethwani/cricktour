@@ -523,7 +523,7 @@ else{?>
             </a>        
           </li>
           <li class="nav-item">
-            <a href="<?php echo base_url('admin/widget');?>" class="nav-link">
+            <a href="<?php echo base_url('admin/add_tournament');?>" class="nav-link">
               <i class="nav-icon fas fa-trophy"></i>
               <p>
                 Add A Tournament
