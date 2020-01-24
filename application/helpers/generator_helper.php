@@ -26,6 +26,7 @@
 
 // ------------------------------------------------------------------------
 
+
 function generate_button_key($action_name,$use_lang=TRUE)
 {
 	if($use_lang)

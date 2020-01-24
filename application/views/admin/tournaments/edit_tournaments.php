@@ -258,7 +258,7 @@
 									</div>
 								</div>
 
-								<input type="hidden" name="tournaments_id" value="<?php echo encode_form_id($tournaments_records->tournaments_id); ?>" />
+								<input type="hidden" name="id" value="<?php echo encode_form_id($tournaments_records->id); ?>" />
 
 								</fieldset>
 							</form>

@@ -98,5 +98,10 @@ function js_path($asset_name, $module_name = NULL)
 {
 	return get_asset_instance()->js_path($asset_name, $module_name);
 }
-
+function encode_id($id){
+	return base64_encode($id);
+}
+function encode_ajax_id($id){
+	return base64_encode($id);
+}
 ?>
