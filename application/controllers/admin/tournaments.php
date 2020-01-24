@@ -12,14 +12,14 @@ class Tournaments extends MY_Controller {
 	{
 		$data = array();
 
-		$tournaments_records = $this->tournaments_model->tournaments_info()->get_all();
+		$tournaments_records = $this->tournaments_model->tournaments_info();
 
 		$data['tournaments_records'] = $tournaments_records;
 
 	    $data['main'] = 'tournaments/tournaments_list';
 	    $data['js_function'] = array('tournaments_list');
 
-		$this->load->view('template/template',$data);
+		$this->load->view('admin/tournaments/tournaments_list',$data);
 	}
 
 	function add_tournaments()
@@ -78,7 +78,7 @@ class Tournaments extends MY_Controller {
 
 	    	$data['main'] = 'tournaments/add_tournaments';
 
-			$this->load->view('templates/template',$data);
+			$this->load->view('admin/tournaments/add_tournaments',$data);
 	    }
 	}
 

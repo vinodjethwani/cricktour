@@ -1,6 +1,6 @@
 <?php
 
-class Tournaments_model extends MY_Model {
+class Tournaments_model extends CI_Model {
 
 	protected $_table = 'tournaments';
 	protected $primary_key = 'tournaments_id';

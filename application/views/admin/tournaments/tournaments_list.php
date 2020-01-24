@@ -7,7 +7,7 @@
 				<div class="row-fluid">
 					<div class="span12">
 						<ul class="dshb_icoNav tac">
-							<li><a href="<?php echo site_url('tournaments/add_tournaments'); ?>" style="background-image: url(<?php echo base_url(); ?>assets/img/gCons/add-item.png)">New Tournaments</a></li>
+							<li><a href="<?php echo site_url('admin/tournaments/add_tournaments'); ?>" style="background-image: url(<?php echo base_url(); ?>assets/img/gCons/add-item.png)">New Tournaments</a></li>
 						</ul>
 					</div>
 				</div>
