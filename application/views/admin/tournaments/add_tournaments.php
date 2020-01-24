@@ -121,12 +121,12 @@
 							        <div class="controls col-md-10">
 									    <select name="tournament_category" id="tournament_category" class="input-xlarge form-control chosen">
 							                <option value="">Select Tournament Category</option>
-							 				<option value="0" <?php echo set_select('tournament_category', '0'); ?> >Open</option>
-							 				<option value="1" <?php echo set_select('tournament_category', '1'); ?> >Corporate</option>
-							 				<option value="2" <?php echo set_select('tournament_category', '2'); ?> >Community</option>
-							 				<option value="3" <?php echo set_select('tournament_category', '3'); ?> >School</option>
-							 				<option value="4" <?php echo set_select('tournament_category', '4'); ?> >Box-Cricket</option>
-							 				<option value="5" <?php echo set_select('tournament_category', '5'); ?> >Other</option>
+							 				<option value="Open" <?php echo set_select('tournament_category', '0'); ?> >Open</option>
+							 				<option value="Corporate" <?php echo set_select('tournament_category', '1'); ?> >Corporate</option>
+							 				<option value="Community" <?php echo set_select('tournament_category', '2'); ?> >Community</option>
+							 				<option value="School" <?php echo set_select('tournament_category', '3'); ?> >School</option>
+							 				<option value="Box-Cricket" <?php echo set_select('tournament_category', '4'); ?> >Box-Cricket</option>
+							 				<option value="Other" <?php echo set_select('tournament_category', '5'); ?> >Other</option>
 									    </select>
 										<?php echo form_error('tournament_category', '<span class="help-inline">', '</span>'); ?>
 									</div>
@@ -139,9 +139,9 @@
 							        <div class="controls col-md-10">
 									    <select name="ball_type" id="ball_type" class="input-xlarge form-control chosen">
 							                <option value="">Select Ball Type</option>
-							 				<option value="0" <?php echo set_select('ball_type', '0'); ?> >Leather</option>
-							 				<option value="1" <?php echo set_select('ball_type', '1'); ?> >Tennis</option>
-							 				<option value=" 2" <?php echo set_select('ball_type', ' 2'); ?> >Other</option>
+							 				<option value="0" <?php echo set_select('ball_type', 'Leather'); ?> >Leather</option>
+							 				<option value="Tennis" <?php echo set_select('ball_type', 'Tennis'); ?> >Tennis</option>
+							 				<option value="Other" <?php echo set_select('ball_type', 'Other'); ?> >Other</option>
 									    </select>
 										<?php echo form_error('ball_type', '<span class="help-inline">', '</span>'); ?>
 									</div>
@@ -154,8 +154,8 @@
 							        <div class="controls col-md-10">
 									    <select name="match_type" id="match_type" class="input-xlarge form-control chosen">
 							                <option value="">Select Match Type</option>
-							 				<option value="0" <?php echo set_select('match_type', '0'); ?> >Limited Overs</option>
-							 				<option value="1" <?php echo set_select('match_type', '1'); ?> >Test Match</option>
+							 				<option value="Limited Overs" <?php echo set_select('match_type', 'Limited Overs'); ?> >Limited Overs</option>
+							 				<option value="Test Match" <?php echo set_select('match_type', 'Test Match'); ?> >Test Match</option>
 									    </select>
 										<?php echo form_error('match_type', '<span class="help-inline">', '</span>'); ?>
 									</div>
