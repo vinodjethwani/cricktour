@@ -7,6 +7,10 @@
 
   <title>Crictour | Admin</title>
 
+<!-- Cricktour Style.css-->
+<link rel="stylesheet" href="<?php echo base_url();?>/assets/css/style.css">
+
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<?php echo base_url();?>/assets/admintheme/plugins/fontawesome-free/css/all.min.css">
   <!-- overlayScrollbars -->
@@ -24,8 +28,6 @@
    <!-- summernote -->
    <link rel="stylesheet" href="<?php echo base_url();?>/assets/admintheme/plugins/summernote/summernote-bs4.css">
 
-
-  
   <!-- fullCalendar -->
   <link rel="stylesheet" href="<?php echo base_url();?>/assets/admintheme/plugins/fullcalendar/main.min.css">
   <link rel="stylesheet" href="<?php echo base_url();?>/assets/admintheme/plugins/fullcalendar-daygrid/main.min.css">

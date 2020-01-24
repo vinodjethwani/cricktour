@@ -1,0 +1,100 @@
+.addbanner{
+	margin-left:140px;
+	width: 116%;
+		position:relative;
+
+}
+.addbanner-image{
+	margin-top: 40px;
+}
+.banner-size{
+	    height: 220px !important;
+}
+.imageprofile{
+	height:20px;
+	width:20px;
+	position:absolute;
+	margin-bottom:30px;
+}
+.logo-text{
+	font-size: 22px;
+    color: currentColor;
+    font-style: inherit;
+    font-weight: 500;
+	margin-right:6px;
+}
+.divspace-banner{
+	padding-left:0px;
+}
+.input-file{
+	width: 220px;
+}
+
+.styl{
+	width:1000px;
+	margin-left:40px;
+	border:none;
+	border-bottom:1px solid #17A2B8;	
+	background:transparent;
+}
+.labelname{
+	font-size:20px;
+	color:#17A2B8;
+}
+.mainform{
+	background:white;
+	margin:100px;
+}
+.inputtour{
+	margin-top:60px;
+}
+.radiotour{
+	margin-left:40px;
+}
+.categorytour{
+	color:#17A2B8
+}
+.radiotours{
+	margin-right:40px;
+}
+
+.categorytours{
+	font-size:18px;
+	margin-left:20px;
+	margin-right:7px;
+}
+.tourdetails{
+	height: 162px;
+    width: 990px;
+    margin-left: 40px;
+    margin-top: 45px;
+}
+ .tourdetails::placeholder{
+	font-size:23px;
+}
+.sendtour{
+	margin-left:140px;
+	height:45px;
+	width:800px;
+	background:#17A2B8;
+	border:1px solid #17A2B8;
+	color:white;
+	font-size:28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
