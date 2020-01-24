@@ -104,4 +104,13 @@ function encode_id($id){
 function encode_ajax_id($id){
 	return $id;
 }
+function check_id_hash($id){
+	return $id;
+}
+function prepare_php_date($id){
+	return $id;
+}
+function encode_form_id($id){
+	return $id;
+}
 ?>

@@ -103,10 +103,10 @@ class Tournaments extends MY_Controller {
 
 	    	//check hash if the user edit it
 
-	    	$tournaments_id = get_attr_id($hash_tournaments_id);
+	    	$id = get_attr_id($hash_tournaments_id);
 	    	$hash = get_attr_hash($hash_tournaments_id);
 
-	    	$this->permission->check_form_id_hash($tournaments_id,$hash);
+	    	$this->permission->check_form_id_hash($id,$hash);
 
 	    	$name = $this->input->post('name');
 			$city_id = $this->input->post('city_id');
@@ -125,26 +125,26 @@ class Tournaments extends MY_Controller {
 
 	    	$data = array('name'=>$name,'city_id'=>$city_id,'ground_id'=>$ground_id,'organiser_name'=>$organiser_name,'organiser_mobile_number'=>$organiser_mobile_number,'start_date'=>$start_date,'end_date'=>$end_date,'tournament_category'=>$tournament_category,'ball_type'=>$ball_type,'match_type'=>$match_type,'logo'=>$logo,'banner'=>$banner,'more_details'=>$more_details);
 
-	    	if($this->tournaments_model->update($tournaments_id,$data))
+	    	if($this->tournaments_model->update($id,$data))
 			{
 				$this->session->set_flashdata('success', 'The tournaments info have been successfully updated');
-				redirect("tournaments/edit_tournaments/$tournaments_id/$hash");
+				redirect("tournaments/edit_tournaments/$id/$hash");
 			}
 			else
 			{
 				$this->session->set_flashdata('error', 'Error. Please try again.');
-				redirect("tournaments/edit_tournaments/$tournaments_id/$hash");
+				redirect("tournaments/edit_tournaments/$id/$hash");
 			}
 	    }
 	    else //if page initial load or form validation false
 	    {
-	    	$tournaments_id = $this->uri->segment(4);
+	    	$id = $this->uri->segment(4);
 
 	    	//means come from tournaments list
 
 	    	if($this->uri->segment(4))
 	    	{
-	    		$this->permission->check_id_hash($tournaments_id);
+	    		//$this->permission->check_id_hash($id);
 	    	}
 
 	    	//means come from validation error
@@ -155,23 +155,23 @@ class Tournaments extends MY_Controller {
 
 		    	//check hash if the user edit it
 
-		    	$tournaments_id = get_attr_id($hash_tournaments_id);
+		    	$id = get_attr_id($hash_tournaments_id);
 		    	$hash = get_attr_hash($hash_tournaments_id);
 
-		    	$this->permission->check_form_id_hash($tournaments_id,$hash);
+		    	$this->permission->check_form_id_hash($id,$hash);
 	    	}
 
 	    	$data = array();
 
 			
 
-	    	$tournaments_records = $this->tournaments_model->get($tournaments_id);
+	    	$tournaments_records = $this->tournaments_model->get($id);
 
 	    	$data['tournaments_records'] = $tournaments_records;
 
 	    	$data['main'] = 'admin/tournaments/edit_tournaments';
 
-			$this->load->view('templates/template',$data);
+			$this->load->view('admin/template',$data);
 	    }
 	}
 
@@ -183,7 +183,7 @@ class Tournaments extends MY_Controller {
 
 		//get the tournaments_id
 
-		$tournaments_id = get_attr_id($ajax_tournaments_id);
+		$id = get_attr_id($ajax_tournaments_id);
 
 		//get the hash
 
@@ -191,9 +191,9 @@ class Tournaments extends MY_Controller {
 
 		//check the hash
 
-		$this->permission->check_ajax_id_hash($tournaments_id,$hash);
+		$this->permission->check_ajax_id_hash($id,$hash);
 
-		if($this->tournaments_model->delete($tournaments_id))
+		if($this->tournaments_model->delete($id))
 		{
 			echo '1';
 		}
