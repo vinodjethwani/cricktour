@@ -58,7 +58,7 @@
           </div>
         </div>
 		<div class="input-group mb-3">
-          <input type="number" class="form-control" placeholder="Mobile Number" name="number">
+          <input type="number" class="form-control" placeholder="Mobile Number" name="mobile_number">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-mobile"></span>
@@ -66,7 +66,7 @@
           </div>
         </div>
 		<div class="input-group mb-3">
-          <input type="date" class="form-control" placeholder="Date of Birth" name="dob">
+          <input type="date" class="form-control" placeholder="Date of Birth" name="date_of_birth">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-calendar"></span>
