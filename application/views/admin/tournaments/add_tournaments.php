@@ -3,7 +3,7 @@
 			<h3 class="heading">Add Tournaments</h3>
 				<div class="row-fluid">
 					<div class="span8">
-						<form class="form-horizontal" action="<?php echo site_url('tournaments/add_tournaments'); ?>" method="post" >
+						<form class="form-horizontal" action="<?php echo site_url('admin/tournaments/add_tournaments'); ?>" method="post" >
 							<fieldset>
 		
 								<?php $error = ''; if(form_error('name')){ $error = 'error'; } ?>

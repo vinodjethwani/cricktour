@@ -18,17 +18,18 @@ class Tournaments extends MY_Controller {
 
 	    $data['main'] = 'tournaments/tournaments_list';
 	    $data['js_function'] = array('tournaments_list');
-
+		print_r($data);
+		exit;
 		$this->load->view('admin/tournaments/tournaments_list',$data);
 	}
 
 	function add_tournaments()
 	{
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('name', 'Tournament Name', 'trim|required|alpha_numeric|alpha_dash|is_unique');
+		$this->form_validation->set_rules('name', 'Tournament Name', 'trim|required');
 		$this->form_validation->set_rules('city_id', 'City', 'trim|required');
 		$this->form_validation->set_rules('ground_id', 'Ground', 'trim|required');
-		$this->form_validation->set_rules('organiser_name', 'Organiser Name', 'trim|required|alpha_numeric');
+		$this->form_validation->set_rules('organiser_name', 'Organiser Name', 'trim|required');
 		$this->form_validation->set_rules('organiser_mobile_number', 'Organiser Mobile Number', 'trim|required|numeric');
 		$this->form_validation->set_rules('start_date', 'Start Date', 'trim|required');
 		$this->form_validation->set_rules('end_date', 'End Date', 'trim|required');
@@ -58,11 +59,10 @@ class Tournaments extends MY_Controller {
 			
 
 	    	$data = array('name'=>$name,'city_id'=>$city_id,'ground_id'=>$ground_id,'organiser_name'=>$organiser_name,'organiser_mobile_number'=>$organiser_mobile_number,'start_date'=>$start_date,'end_date'=>$end_date,'tournament_category'=>$tournament_category,'ball_type'=>$ball_type,'match_type'=>$match_type,'logo'=>$logo,'banner'=>$banner,'more_details'=>$more_details);
-
-	    	if($this->tournaments_model->insert($data))
+	    	if($this->tournaments_model->tournament_insert($data))
 			{
 				$this->session->set_flashdata('success', 'The tournaments info have been successfully added');
-				redirect('tournaments/add_tournaments');
+				redirect('admin/tournaments');
 			}
 			else
 			{
