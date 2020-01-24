@@ -136,7 +136,7 @@
 							   	<div class="control-group formSep row <?php echo $error; ?>">
 							        <label for="select01" class="control-label col-md-2">Logo <span class="f_req">*</span></label>
 							        <div class="controls col-md-10">
-										<input type="file" name="logo" id="logo" value="<?php echo set_value('logo'); ?>" class="input-xlarge"  >
+										<input type="text" name="logo" id="logo" value="<?php echo set_value('logo'); ?>" class="input-xlarge"  >
 										<?php echo form_error('logo', '<span class="help-inline">', '</span>'); ?>
 									</div>
 							  	</div>
@@ -146,7 +146,7 @@
 							   	<div class="control-group formSep row <?php echo $error; ?>">
 							        <label for="select01" class="control-label col-md-2">Banner <span class="f_req">*</span></label>
 							        <div class="controls col-md-10">
-										<input type="file" name="banner" id="banner" value="<?php echo set_value('banner'); ?>" class="input-xlarge"  >
+										<input type="text" name="banner" id="banner" value="<?php echo set_value('banner'); ?>" class="input-xlarge"  >
 										<?php echo form_error('banner', '<span class="help-inline">', '</span>'); ?>
 									</div>
 							  	</div>
