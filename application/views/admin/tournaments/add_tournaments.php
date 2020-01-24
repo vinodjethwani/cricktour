@@ -66,7 +66,7 @@
 							        <label for="select01" class="control-label col-md-2">Start Date <span class="f_req">*</span></label>
 							        <div class="controls col-md-10">
 										<div class="input-append date form_date" data-date-format="dd-mm-yyyy">
-											<input class="input-xlarge" type="date" name="start_date" id="start_date" value="<?php echo set_value('start_date'); ?>" /><span class="add-on"><i class="icon-calendar"></i></span>
+											<input class="input-xlarge" type="text" name="start_date" id="start_date" value="<?php echo set_value('start_date'); ?>" /><span class="add-on"><i class="icon-calendar"></i></span>
 										</div>
 										<?php echo form_error('start_date', '<span class="help-inline">', '</span>'); ?>
 									</div>
@@ -78,7 +78,7 @@
 							        <label for="select01" class="control-label col-md-2">End Date <span class="f_req">*</span></label>
 							        <div class="controls col-md-10">
 										<div class="input-append date form_date" data-date-format="dd-mm-yyyy">
-											<input class="input-xlarge" type="date" name="end_date" id="end_date" value="<?php echo set_value('end_date'); ?>" /><span class="add-on"><i class="icon-calendar"></i></span>
+											<input class="input-xlarge" type="text" name="end_date" id="end_date" value="<?php echo set_value('end_date'); ?>" /><span class="add-on"><i class="icon-calendar"></i></span>
 										</div>
 										<?php echo form_error('end_date', '<span class="help-inline">', '</span>'); ?>
 									</div>
