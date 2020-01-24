@@ -16,7 +16,7 @@ class Tournaments extends MY_Controller {
 
 		$data['tournaments_records'] = $tournaments_records;
 
-	    $data['main'] = 'tournaments/tournaments_list';
+	    $data['main'] = 'admin/tournaments/tournaments_list';
 	    $data['js_function'] = array('tournaments_list');
 		print_r($data);
 		exit;
@@ -62,19 +62,19 @@ class Tournaments extends MY_Controller {
 	    	if($this->tournaments_model->tournament_insert($data))
 			{
 				$this->session->set_flashdata('success', 'The tournaments info have been successfully added');
-				redirect('admin/tournaments');
+				redirect('admin/tournaments/add_tournaments');
 			}
 			else
 			{
 				$this->session->set_flashdata('error', 'Error. Please try again.');
-				redirect('tournaments/add_tournaments');
+				redirect('admin/tournaments/add_tournaments');
 			}
 	    }
 	    else //if page initial load or form validation false
 	    {
 	    	$data = array();
 
-	    	$data['main'] = 'tournaments/add_tournaments';
+	    	$data['main'] = 'admin/tournaments/add_tournaments';
 
 			$this->load->view('admin/tournaments/add_tournaments',$data);
 	    }
@@ -170,7 +170,7 @@ class Tournaments extends MY_Controller {
 
 	    	$data['tournaments_records'] = $tournaments_records;
 
-	    	$data['main'] = 'tournaments/edit_tournaments';
+	    	$data['main'] = 'admin/tournaments/edit_tournaments';
 
 			$this->load->view('templates/template',$data);
 	    }

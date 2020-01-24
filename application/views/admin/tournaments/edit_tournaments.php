@@ -5,7 +5,7 @@
 			<h3 class="heading">Edit Tournaments</h3>
 				<div class="row-fluid">
 					<div class="span8">
-						<form class="form-horizontal" action="<?php echo site_url('tournaments/edit_tournaments'); ?>" method="post" >
+						<form class="form-horizontal" action="<?php echo site_url('admin/tournaments/edit_tournaments'); ?>" method="post" >
 							<fieldset>
 		
 								<?php $error = ''; if(form_error('name')){ $error = 'error'; } ?>
