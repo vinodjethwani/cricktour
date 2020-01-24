@@ -12,7 +12,7 @@ class Tournaments extends MY_Controller {
 	{
 		$data = array();
 
-		$tournaments_records = $this->tournaments_model->tournaments_info();
+		$tournaments_records = $this->tournaments_model->tournaments_info()->get_all('tournaments');
 
 		$data['tournaments_records'] = $tournaments_records;
 
