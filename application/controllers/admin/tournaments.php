@@ -74,8 +74,6 @@ class Tournaments extends MY_Controller {
 	    {
 	    	$data = array();
 
-			
-
 	    	$data['main'] = 'tournaments/add_tournaments';
 
 			$this->load->view('admin/tournaments/add_tournaments',$data);
