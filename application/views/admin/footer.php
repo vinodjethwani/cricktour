@@ -4,7 +4,7 @@
     All rights reserved.
     
   </footer>
-</div>
+
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
