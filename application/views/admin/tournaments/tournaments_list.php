@@ -39,8 +39,8 @@
 						<tr>
 							<td></td>
 							<td><?php echo $row->name; ?></td>
-							<td><?php echo $row->city_name; ?></td>
-							<td><?php echo $row->ground_name; ?></td>
+							<td><?php ?></td>
+							<td><?php  ?></td>
 							<td><?php echo $row->organiser_name; ?></td>
 							<td><?php echo $row->organiser_mobile_number; ?></td>
 							<td><?php echo $row->start_date; ?></td>
@@ -52,7 +52,7 @@
 							<td><?php echo $row->banner; ?></td>
 							<td><?php echo $row->more_details; ?></td>
 							<td>
-                              <a href="<?php echo site_url('tournaments/edit_tournaments/'.$row->tournaments_id.'/'.encode_id($row->tournaments_id)); ?>" class="sepV_a" title="Edit"><i class="icon-pencil"></i></a>
+                              <a href="<?php echo site_url('tournaments/edit_tournaments/'.$row->id.'/'.encode_id($row->tournaments_id)); ?>" class="sepV_a" title="Edit"><i class="icon-pencil"></i></a>
                               <a href="#" class="delete" id="<?php echo encode_ajax_id($row->tournaments_id); ?>" title="Delete"><i class="icon-trash"></i></a>
                           	</td>
                         </tr>
