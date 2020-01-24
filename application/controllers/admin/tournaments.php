@@ -17,8 +17,8 @@ class Tournaments extends MY_Controller {
 	    $data['main'] = 'admin/tournaments/tournaments_list';
 	    $data['js_function'] = array('tournaments_list');
 
-		$this->load->view('admin/template/template',$data);
-		$this->load->view('admin/tournaments/tournaments_list',$data);
+		$this->load->view('admin/template',$data);
+		
 	}
 	
 	function add_tournaments()
