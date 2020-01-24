@@ -59,10 +59,10 @@ class Tournaments extends MY_Controller {
 			
 
 	    	$data = array('name'=>$name,'city_id'=>$city_id,'ground_id'=>$ground_id,'organiser_name'=>$organiser_name,'organiser_mobile_number'=>$organiser_mobile_number,'start_date'=>$start_date,'end_date'=>$end_date,'tournament_category'=>$tournament_category,'ball_type'=>$ball_type,'match_type'=>$match_type,'logo'=>$logo,'banner'=>$banner,'more_details'=>$more_details);
-	    	if($this->tournaments_model->tournament_insert($data))
+	    	if($this->tournaments_model->insert($data))
 			{
 				$this->session->set_flashdata('success', 'The tournaments info have been successfully added');
-				redirect('admin/tournaments/add_tournaments');
+				redirect('admin/tournaments/');
 			}
 			else
 			{

@@ -14,17 +14,5 @@ class Tournaments_model extends MY_Model {
 
         return $this;
     }
-    public function tournament_insert($data)
-		{
-			if($this->db->insert('tournaments',$data))
-				{
-						return $this->db->insert_id();
-				}
-			else
-				{
-						return false;
-				}
-					$this->db->close();
-                }
 }
 ?>
