@@ -92,7 +92,7 @@ $route['admin/Pages/Projects']='admin/DashboardController/Projects';
 
 $route['admin/Pages/Contacts']='admin/DashboardController/Contact';
 
-
+$route['admin/tournaments/edit_tournaments/(:any)/']='admin/tournaments/edit_tournaments/$1/';
 
 
 

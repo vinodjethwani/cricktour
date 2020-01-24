@@ -52,7 +52,7 @@
 							<td><?php echo $row->banner; ?></td>
 							<td><?php echo $row->more_details; ?></td>
 							<td>
-                              <a href="<?php echo site_url('tournaments/edit_tournaments/'.$row->id.'/'.encode_id($row->id)); ?>" class="sepV_a" title="Edit"><i class="icon-pencil"></i></a>
+                              <a href="<?php echo site_url('admin/tournaments/edit_tournaments/'.$row->id.'/'.encode_id($row->id)); ?>" class="sepV_a" title="Edit"><i class="icon-pencil"></i></a>
                               <a href="#" class="delete" id="<?php echo encode_ajax_id($row->id); ?>" title="Delete"><i class="icon-trash"></i></a>
                           	</td>
                         </tr>

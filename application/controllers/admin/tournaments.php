@@ -138,11 +138,11 @@ class Tournaments extends MY_Controller {
 	    }
 	    else //if page initial load or form validation false
 	    {
-	    	$tournaments_id = $this->uri->segment(3);
+	    	$tournaments_id = $this->uri->segment(4);
 
 	    	//means come from tournaments list
 
-	    	if($this->uri->segment(3))
+	    	if($this->uri->segment(4))
 	    	{
 	    		$this->permission->check_id_hash($tournaments_id);
 	    	}
