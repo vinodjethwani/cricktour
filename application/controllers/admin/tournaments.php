@@ -41,6 +41,7 @@ class Tournaments extends MY_Controller {
 
 		if($this->form_validation->run() == TRUE)
 	    {
+			
 	    	$name = $this->input->post('name');
 			$city_id = $this->input->post('city_id');
 			$ground_id = $this->input->post('ground_id');
@@ -54,8 +55,19 @@ class Tournaments extends MY_Controller {
 			$logo = $this->input->post('logo');
 			$banner = $this->input->post('banner');
 			$more_details = $this->input->post('more_details');
-			
 
+			$config['upload_path']='E:/xampp/htdocs/cricktour/images/post';
+			$config['allowed_types']= 'gif|jpg|png';
+			$config['max_size']= 10000;
+			$this->load->library('upload', $config);
+
+			if(!$this->upload->do_upload('logo') && !$this->upload->do_upload('banner'))
+				{
+						$data['error'] = array('error' => $this->upload->display_errors());
+						$this->session->set_flashdata('error', $data);
+						redirect('admin/tournaments/add_tournaments');
+				}
+			else{
 	    	$data = array('name'=>$name,'city_id'=>$city_id,'ground_id'=>$ground_id,'organiser_name'=>$organiser_name,'organiser_mobile_number'=>$organiser_mobile_number,'start_date'=>$start_date,'end_date'=>$end_date,'tournament_category'=>$tournament_category,'ball_type'=>$ball_type,'match_type'=>$match_type,'logo'=>$logo,'banner'=>$banner,'more_details'=>$more_details);
 	    	if($this->tournaments_model->insert($data))
 			{
@@ -67,6 +79,7 @@ class Tournaments extends MY_Controller {
 				$this->session->set_flashdata('error', 'Error. Please try again.');
 				redirect('admin/tournaments/add_tournaments');
 			}
+		}
 	    }
 	    else //if page initial load or form validation false
 	    {

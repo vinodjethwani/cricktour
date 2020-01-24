@@ -33,7 +33,7 @@
 			<h3 class="heading">Add Tournaments</h3>
 				<div class="row-fluid">
 					<div class="span8">
-						<form class="form-horizontal" action="<?php echo site_url('admin/tournaments/add_tournaments'); ?>" method="post" >
+						<form class="form-horizontal" action="<?php echo site_url('admin/tournaments/add_tournaments'); ?>" method="post" enctype="multipart/form-data" >
 							<fieldset>
 		
 								<?php $error = ''; if(form_error('name')){ $error = 'error'; } ?>
@@ -166,7 +166,7 @@
 							   	<div class="control-group formSep row <?php echo $error; ?>">
 							        <label for="select01" class="control-label col-md-2">Logo <span class="f_req">*</span></label>
 							        <div class="controls col-md-10">
-										<input type="text" name="logo" id="logo" value="<?php echo set_value('logo'); ?>" class="input-xlarge form-control"  >
+										<input type="file" name="logo" id="logo" value="<?php echo set_value('logo'); ?>" class="input-xlarge form-control"  >
 										<?php echo form_error('logo', '<span class="help-inline">', '</span>'); ?>
 									</div>
 							  	</div>
@@ -176,7 +176,7 @@
 							   	<div class="control-group formSep row <?php echo $error; ?>">
 							        <label for="select01" class="control-label col-md-2">Banner <span class="f_req">*</span></label>
 							        <div class="controls col-md-10">
-										<input type="text" name="banner" id="banner" value="<?php echo set_value('banner'); ?>" class="input-xlarge form-control"  >
+										<input type="file" name="banner" id="banner" value="<?php echo set_value('banner'); ?>" class="input-xlarge form-control"  >
 										<?php echo form_error('banner', '<span class="help-inline">', '</span>'); ?>
 									</div>
 							  	</div>
