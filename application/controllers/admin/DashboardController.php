@@ -9,10 +9,10 @@ class DashboardController extends My_Controller {
 		$this->load->view('admin/dashboard');
 		$this->load->view('admin/footer');
 	}
-	public function sidewidget()
+	public function add_tournament()
 	{
 		$this->load->view('admin/header');
-		$this->load->view('admin/Sidebar/widgets');
+		$this->load->view('admin/Sidebar/add_tournament');
 		$this->load->view('admin/footer');
 	}
 	public function layouts()
