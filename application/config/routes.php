@@ -64,9 +64,9 @@ $route['admin/dashboard']='admin/DashboardController';
 
 $route['admin/add_tournament']='admin/DashboardController/add_tournament';
 
-$route['admin/my_tournaments']='admin/DashboardController/my_tournaments';
+$route['admin/my_tours']='admin/DashboardController/my_tours';
 
-$route['admin/my_matches']='admin/DashboardController/my_matches';
+$route['admin/my_match']='admin/DashboardController/my_match';
 
 $route['admin/layouts/Top-nav']='admin/DashboardController/layouts';
 

@@ -583,7 +583,7 @@ else{?>
           </li>
 		  
 		  <li class="nav-item">
-            <a href="<?php echo base_url('admin/my_tournaments');?>" class="nav-link">
+            <a href="<?php echo base_url('admin/my_tours');?>" class="nav-link">
               <img class="my-tourimage"src="<?php echo base_url();?>/assets/admintheme/dist/img/my-tour.png">
               <p class="my-tourtext">
                 My Tournaments
@@ -593,7 +593,7 @@ else{?>
 		  
 		  
 		  <li class="nav-item">
-            <a href="<?php echo base_url('admin/my_matches');?>" class="nav-link">
+            <a href="<?php echo base_url('admin/my_match');?>" class="nav-link">
               <img class="crick-image"src="<?php echo base_url();?>/assets/admintheme/dist/img/cricket.png">
               <p>
                 My Matches

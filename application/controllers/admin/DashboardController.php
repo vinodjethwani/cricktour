@@ -15,17 +15,17 @@ class DashboardController extends My_Controller {
 		$this->load->view('admin/Sidebar/add_tournament');
 		$this->load->view('admin/footer');
 	}
-	public function my_tournaments()
+	public function my_tours()
 	{
 		$this->load->view('admin/header');
-		$this->load->view('admin/Sidebar/my_tournaments');
+		$this->load->view('admin/Sidebar/my_tours');
 		$this->load->view('admin/footer');
 	}
 	
-	public function my_matches()
+	public function my_match()
 	{
 		$this->load->view('admin/header');
-		$this->load->view('admin/Sidebar/my_matches');
+		$this->load->view('admin/Sidebar/my_match');
 	}
 	
 	public function layouts()
