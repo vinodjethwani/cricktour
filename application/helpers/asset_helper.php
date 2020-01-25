@@ -98,19 +98,5 @@ function js_path($asset_name, $module_name = NULL)
 {
 	return get_asset_instance()->js_path($asset_name, $module_name);
 }
-function encode_id($id){
-	return $id;
-}
-function encode_ajax_id($id){
-	return $id;
-}
-function check_id_hash($id){
-	return $id;
-}
-function prepare_php_date($id){
-	return $id;
-}
-function encode_form_id($id){
-	return $id;
-}
+
 ?>

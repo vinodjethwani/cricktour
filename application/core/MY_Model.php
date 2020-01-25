@@ -27,7 +27,6 @@ class MY_Model extends CI_Model
      * Used by the get(), update() and delete() functions.
      */
     protected $primary_key = 'id';
-
     /**
      * Support for soft deletes and this model's 'deleted' key
      */
@@ -202,7 +201,6 @@ class MY_Model extends CI_Model
     public function update($primary_value, $data, $skip_validation = FALSE)
     {
         $data = $this->trigger('before_update', $data);
-
         if ($skip_validation === FALSE)
         {
             $data = $this->validate($data);
