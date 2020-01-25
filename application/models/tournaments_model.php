@@ -3,7 +3,7 @@
 class Tournaments_model extends MY_Model {
 
 	protected $_table = 'tournaments';
-	protected $primary_key = 'id';
+	protected $primary_key = 'tournaments_id';
 
 	public function tournaments_info()
     {

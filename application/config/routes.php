@@ -114,5 +114,7 @@ $route['admin/Pages/Contacts']='admin/DashboardController/Contact';
 
 
 
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
