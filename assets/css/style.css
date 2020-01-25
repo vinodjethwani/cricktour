@@ -1,8 +1,15 @@
+
+.head-navigation{
+	background:#17A2B8 !important;	
+	color:white !important;
+}
+.logo-crick{
+	background:#6C757D !important;
+}
 .addbanner{
 	margin-left:140px;
 	width: 116%;
-		position:relative;
-
+	position:relative;
 }
 .addbanner-image{
 	margin-top: 40px;
@@ -82,19 +89,86 @@
 	font-size:28px;
 }
 
+.topbartour{
+	width:550px;
+}
+.footer-tour{
+	float:left;
+}
+.footer-tours{
+	float:right;
+}
+.tour-follow{
+	height:33px;
+	width:100px;
+	background:#17A2B8;
+	border:1px solid #17A2B8;
+	color:white;
+	font-size:18px;
+}
+.banner-tour{
+	width: 1040px;
+    height: 280px;
+}
+.headerbanner{
+	background:#17A2B8 !important;
+	color:white;
+}
+.cardhead-button{
+	color:white;
+}
+.header-name{
+    font-size: 25px !important;
+    font-style: inherit;
+}
+.footer-text{
+	font-size:18px;
+}
+.foot-banner{
+	background:whitesmoke;
+}
 
+.crick-image{
+	height:18px;
+	width:29px;
+	
+}
+.my-tourtext{
+	margin-left:7px !important;
+}
+.my-tourimage{
+	height:18px;
+	width:21px;
+}
 
+.top-nav-items{
+	color:white !important;
+}
+.search-topnav{
+	background:#45B5C6 !important;
+}
+.search-topnav::placeholder{
+	color:white !important;
+}
+.search-topicon{
+	color:white !important;
+}
 
+.search-topicon2{
+	color:#D6D8D9 !important;
+}
 
+.search-topicon2:hover{
+	color:white !important;
+}
+.side-active{
+	background: #17A2B8 !important;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.username{
+	padding-left:16px;
+	color:#D6D8D9;
+}
+.username:hover{
+	color:white;
+}

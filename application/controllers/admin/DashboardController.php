@@ -15,6 +15,19 @@ class DashboardController extends My_Controller {
 		$this->load->view('admin/Sidebar/add_tournament');
 		$this->load->view('admin/footer');
 	}
+	public function my_tournaments()
+	{
+		$this->load->view('admin/header');
+		$this->load->view('admin/Sidebar/my_tournaments');
+		$this->load->view('admin/footer');
+	}
+	
+	public function my_matches()
+	{
+		$this->load->view('admin/header');
+		$this->load->view('admin/Sidebar/my_matches');
+	}
+	
 	public function layouts()
 	{
 		$this->load->view('admin/sidebar/top-nav');

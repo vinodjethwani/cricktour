@@ -207,18 +207,9 @@
     reserved.
   </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
-<script src="<?php echo base_url();?>/assets/admintheme/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
-<!-- Filterizr-->
-<script src="<?php echo base_url();?>/assets/admintheme/plugins/filterizr/jquery.filterizr.min.js"></script>
-<!-- Page specific script -->
 <script>
   $(function () {
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
