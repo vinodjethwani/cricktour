@@ -34,8 +34,8 @@ class Tournaments extends MY_Controller {
 		$this->form_validation->set_rules('tournament_category', 'Tournament Category', 'trim|required');
 		$this->form_validation->set_rules('ball_type', 'Ball Type', 'trim|required');
 		$this->form_validation->set_rules('match_type', 'Match Type', 'trim|required');
-		$this->form_validation->set_rules('logo', 'Logo', 'trim|required');
-		$this->form_validation->set_rules('banner', 'Banner', 'trim|required');
+		// $this->form_validation->set_rules('logo', 'Logo', 'required');
+		// $this->form_validation->set_rules('banner', 'Banner', 'required');
 		$this->form_validation->set_rules('more_details', 'More Details', 'trim');
 		
 
@@ -56,19 +56,39 @@ class Tournaments extends MY_Controller {
 			$banner = $this->input->post('banner');
 			$more_details = $this->input->post('more_details');
 
-			$config['upload_path']='E:/xampp/htdocs/cricktour/images/post';
+			$config['upload_path']='E:/xampp/htdocs/cricktour/images/uploads/';
 			$config['allowed_types']= 'gif|jpg|png';
 			$config['max_size']= 10000;
+			
 			$this->load->library('upload', $config);
+			
+			//Check if logo in uploaded
+			if(!$this->upload->do_upload('logo'))
+			{
+				$data['error'] = array('error' => $this->upload->display_errors());
+					$this->session->set_flashdata('error', $data);
+					redirect('admin/tournaments/add_tournaments');
+			}
+			else
+			{
+				$upload_data=$this->upload->data();
+				$logo=$upload_data['file_name'];
+			}
 
-			if(!$this->upload->do_upload('logo') && !$this->upload->do_upload('banner'))
-				{
-						$data['error'] = array('error' => $this->upload->display_errors());
+			//Check if banner is uploaded or not
+			if(!$this->upload->do_upload('banner'))
+			{
+					$data['error'] = array('error' => $this->upload->display_errors());
 						$this->session->set_flashdata('error', $data);
 						redirect('admin/tournaments/add_tournaments');
-				}
-			else{
-	    	$data = array('name'=>$name,'city_id'=>$city_id,'ground_id'=>$ground_id,'organiser_name'=>$organiser_name,'organiser_mobile_number'=>$organiser_mobile_number,'start_date'=>$start_date,'end_date'=>$end_date,'tournament_category'=>$tournament_category,'ball_type'=>$ball_type,'match_type'=>$match_type,'logo'=>$logo,'banner'=>$banner,'more_details'=>$more_details);
+			}
+			else
+			{
+				$upload_data=$this->upload->data();
+				$banner=$upload_data['file_name'];
+			}
+				//inserting data in table if images are uploaded successfully
+	    		$data = array('name'=>$name,'city_id'=>$city_id,'ground_id'=>$ground_id,'organiser_name'=>$organiser_name,'organiser_mobile_number'=>$organiser_mobile_number,'start_date'=>$start_date,'end_date'=>$end_date,'tournament_category'=>$tournament_category,'ball_type'=>$ball_type,'match_type'=>$match_type,'logo'=>$logo,'banner'=>$banner,'more_details'=>$more_details);
 	    	if($this->tournaments_model->insert($data))
 			{
 				$this->session->set_flashdata('success', 'The tournaments info have been successfully added');
@@ -79,7 +99,6 @@ class Tournaments extends MY_Controller {
 				$this->session->set_flashdata('error', 'Error. Please try again.');
 				redirect('admin/tournaments/add_tournaments');
 			}
-		}
 	    }
 	    else //if page initial load or form validation false
 	    {
@@ -95,10 +114,10 @@ class Tournaments extends MY_Controller {
 	function edit_tournaments()
 	{
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('name', 'Tournament Name', 'trim|required|alpha_numeric|alpha_dash|is_unique');
+		$this->form_validation->set_rules('name', 'Tournament Name', 'trim|required|is_unique');
 		$this->form_validation->set_rules('city_id', 'City', 'trim|required');
 		$this->form_validation->set_rules('ground_id', 'Ground', 'trim|required');
-		$this->form_validation->set_rules('organiser_name', 'Organiser Name', 'trim|required|alpha_numeric');
+		$this->form_validation->set_rules('organiser_name', 'Organiser Name', 'trim|required');
 		$this->form_validation->set_rules('organiser_mobile_number', 'Organiser Mobile Number', 'trim|required|numeric');
 		$this->form_validation->set_rules('start_date', 'Start Date', 'trim|required');
 		$this->form_validation->set_rules('end_date', 'End Date', 'trim|required');
@@ -108,12 +127,11 @@ class Tournaments extends MY_Controller {
 		$this->form_validation->set_rules('logo', 'Logo', 'trim|required');
 		$this->form_validation->set_rules('banner', 'Banner', 'trim|required');
 		$this->form_validation->set_rules('more_details', 'More Details', 'trim');
-		
 
 		if($this->form_validation->run() == TRUE)
 	    {
 	    	$hash_tournaments_id = $this->input->post('tournaments_id');
-
+				
 	    	//check hash if the user edit it
 
 	    	$id = get_attr_id($hash_tournaments_id);
@@ -137,7 +155,6 @@ class Tournaments extends MY_Controller {
 			
 
 	    	$data = array('name'=>$name,'city_id'=>$city_id,'ground_id'=>$ground_id,'organiser_name'=>$organiser_name,'organiser_mobile_number'=>$organiser_mobile_number,'start_date'=>$start_date,'end_date'=>$end_date,'tournament_category'=>$tournament_category,'ball_type'=>$ball_type,'match_type'=>$match_type,'logo'=>$logo,'banner'=>$banner,'more_details'=>$more_details);
-
 	    	if($this->tournaments_model->update($id,$data))
 			{
 				$this->session->set_flashdata('success', 'The tournaments info have been successfully updated');
@@ -152,7 +169,6 @@ class Tournaments extends MY_Controller {
 	    else //if page initial load or form validation false
 	    {
 	    	$id = $this->uri->segment(4);
-
 	    	//means come from tournaments list
 
 	    	if($this->uri->segment(4))
@@ -174,9 +190,7 @@ class Tournaments extends MY_Controller {
 		    	$this->permission->check_form_id_hash($id,$hash);
 	    	}
 
-	    	$data = array();
-
-			
+	    	$data = array();			
 
 	    	$tournaments_records = $this->tournaments_model->get($id);
 

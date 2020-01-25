@@ -33,6 +33,7 @@
 			<h3 class="heading">Add Tournaments</h3>
 				<div class="row-fluid">
 					<div class="span8">
+					
 						<form class="form-horizontal" action="<?php echo site_url('admin/tournaments/add_tournaments'); ?>" method="post" enctype="multipart/form-data" >
 							<fieldset>
 		
